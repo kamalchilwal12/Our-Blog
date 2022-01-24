@@ -4,7 +4,13 @@
 		<title>Test Templates </title>
 	</head>
 	<body>
-		<p>Hi there! </p>
-		<p>It works! </p>
+	{% for post in posts %}	
+		<article>
+			<time> published: {{ post.published_date }} </time>
+			<h2><a href="">{{ post.title }} </a></h2>
+			<p> {{ post.text|linebreaksbr }}</p>
+		</article>	
+	{% endfor %}
+
 	</body>
 </html>
